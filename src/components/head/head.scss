@@ -1,0 +1,51 @@
+.head {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    padding: 0 40px;
+    color: #fff;
+    background-color: #48cf82;
+    &>span {
+        font-size: 26px;
+        color: #fefefe;
+        line-height: 50px;
+    }
+    &>div {
+        font-size: 14px;
+        color: #f2f2f2;
+        &>img {
+            margin-right: 17px;
+            margin-top: 7px;
+        }
+        span, a {
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+    }
+}
+.icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+    margin-left: 45px;
+    cursor: pointer;
+    background-image: url('../../images/headIcon.png');
+    background-repeat: no-repeat;
+    &:hover {
+        .detail {
+            display: block;
+        }
+    }
+}
+.information {
+    background-position: 2px 0px;
+}
+.copyright {
+    background-position: -20px 0px;
+}
+.exit {
+    background-position: -44px 0px;
+}
