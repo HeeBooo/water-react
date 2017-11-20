@@ -40,27 +40,77 @@ class Main extends Component {
         this.state = {
             firstState: false
         }
-        this.firstMenu = [
-            { name: '概览',
-             img: menuIcon1, sec: []},
-            { name: '智能路径',
-             img: menuIcon2 },
-            { name: '基础信息',
-             img: menuIcon3, sec: ['组织机构管理', '角色管理', '人员管理', '账号管理', '资质管理']},
-            { name: '资源管理',
-             img: menuIcon4 },
-            { name: '调度管理',
-             img: menuIcon5 },
-            { name: '审批管理',
-             img: menuIcon6 },
-            { name: '工单管理',
-             img: menuIcon7 },
-            { name: '统计报表',
-             img: menuIcon8 },
-            { name: '知识库',
-             img: menuIcon9 },
-            { name: '个人中心',
-             img: menuIcon10 }
+        this.Menu = [{
+                name: '概览',
+                img: menuIcon1,
+                sec: [],
+            },
+            {
+                name: '智能路径',
+                img: menuIcon2,
+                sec: [],
+            },
+            {
+                name: '基础信息',
+                img: menuIcon3,
+                sec: [
+                    {
+                        name: '组织机构管理',
+                        url: '/organ'
+                    },
+                    {
+                        name: '角色管理',
+                        url: '/role'
+                    },
+                    {
+                        name: '人员管理',
+                        url: '/person'
+                    },
+                    {
+                        name: '账号管理',
+                        url: '/account'
+                    },
+                    {
+                        name: '资质管理',
+                        url: '/qualify'
+                    }
+                ]
+            },
+            {
+                name: '资源管理',
+                img: menuIcon4,
+                sec: [],
+            },
+            {
+                name: '调度管理',
+                img: menuIcon5,
+                sec: [],
+            },
+            {
+                name: '审批管理',
+                img: menuIcon6,
+                sec: [],
+            },
+            {
+                name: '工单管理',
+                img: menuIcon7,
+                sec: [],
+            },
+            {
+                name: '统计报表',
+                img: menuIcon8,
+                sec: [],
+            },
+            {
+                name: '知识库',
+                img: menuIcon9,
+                sec: [],
+            },
+            {
+                name: '个人中心',
+                img: menuIcon10,
+                sec: [],
+            }
         ];
     }
 
@@ -74,7 +124,8 @@ class Main extends Component {
                     <div className="menu">
                         <ul>
                             {
-                                this.firstMenu.map((item, index) => {
+                                this.Menu.map((item, index) => {
+                                    if(item.sec.length === 0) {
                                         return (
                                             <li key={index}
                                                 ref={`${index}`}
@@ -84,6 +135,11 @@ class Main extends Component {
                                                 </a>
                                             </li>
                                         )
+                                    } else if (item.sec.length !== 0) {
+                                        item.sec.map((item, index) => {
+
+                                        })
+                                    }
                                 })
                             }
                         </ul>
@@ -92,6 +148,7 @@ class Main extends Component {
                     <div className="content">
                         {
                             routes.map((route, index) => {
+                                
                                 return (
                                     <Route
                                         key={index}
